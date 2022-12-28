@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GameHubMobile</string>
+
+    <string-array name="game_names">
+        <item>PlaneShooter</item>
+        <item>TicTacToe</item>
+    </string-array>
 </resources>
