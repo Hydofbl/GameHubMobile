@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    public void goToHighScoreBoard(View v) {
+        Intent intent = new Intent(this, HighScoreBoard.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void exit(View v) {
         System.exit(0);
     }

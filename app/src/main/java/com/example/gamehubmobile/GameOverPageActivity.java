@@ -9,14 +9,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class GameOverPlaneShooter extends AppCompatActivity {
+public class GameOverPageActivity extends AppCompatActivity {
 
     TextView tvScore, tvPersonalBest;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_over_plane_shooter);
+        setContentView(R.layout.activity_game_over);
+
         int score = getIntent().getExtras().getInt("score");
         SharedPreferences pref = getSharedPreferences("MyPref", 0);
         int scoreSP = pref.getInt("scoreSP", 0);
@@ -32,7 +33,7 @@ public class GameOverPlaneShooter extends AppCompatActivity {
         tvPersonalBest.setText(""+scoreSP);
     }
     public void restart(View view){
-        Intent intent = new Intent(GameOverPlaneShooter.this, MainActivity.class);
+        Intent intent = new Intent(GameOverPageActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
     }

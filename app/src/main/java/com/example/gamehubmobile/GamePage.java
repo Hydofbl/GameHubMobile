@@ -19,7 +19,7 @@ public class GamePage extends AppCompatActivity {
 
     // Image'leri buraya koy sıraya göre.
     // isimlerini de strings içine ekle.
-    int[] gameImages = {R.drawable.plane_1, R.drawable.explosion5};
+    int[] gameImages = {R.drawable.plane_1, R.drawable.closebtn};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

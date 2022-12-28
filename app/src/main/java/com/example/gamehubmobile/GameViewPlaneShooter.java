@@ -103,7 +103,7 @@ public class GameViewPlaneShooter extends View {
                 planes.get(i).resetPosition();
                 life--;
                 if(life == 0){
-                    Intent intent = new Intent(context, GameOverPlaneShooter.class);
+                    Intent intent = new Intent(context, GameOverPageActivity.class);
                     intent.putExtra("score", (count * 10));
                     context.startActivity(intent);
                     ((Activity) context).finish();
@@ -119,7 +119,7 @@ public class GameViewPlaneShooter extends View {
                 planes2.get(i).resetPosition();
                 life--;
                 if(life == 0){
-                    Intent intent = new Intent(context, GameOverPlaneShooter.class);
+                    Intent intent = new Intent(context, GameOverPageActivity.class);
                     intent.putExtra("score", (count * 10));
                     context.startActivity(intent);
                     ((Activity) context).finish();
