@@ -3,6 +3,7 @@ package com.example.gamehubmobile;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -46,6 +47,7 @@ public class GameViewPlaneShooter extends View {
     Paint scorePaint, healthPaint;
     final int TEXT_SIZE = 60;
     int life = 10;
+    boolean isSoundOn;
 
     public GameViewPlaneShooter(Context context) {
         super(context);
@@ -86,6 +88,9 @@ public class GameViewPlaneShooter extends View {
         scorePaint.setTextAlign(Paint.Align.LEFT);
         healthPaint = new Paint();
         healthPaint.setColor(Color.GREEN);
+
+        SharedPreferences pref = getContext().getSharedPreferences("MyPref", 0);
+        isSoundOn = pref.getBoolean("soundOnOff", false);
     }
 
     @Override
@@ -141,7 +146,7 @@ public class GameViewPlaneShooter extends View {
                     planes.get(0).resetPosition();
                     count++;
                     missiles.remove(i);
-                    if(point != 0){
+                    if(point != 0 && isSoundOn){
                         sp.play(point, 1, 1, 0, 0, 1);
                     }
 
@@ -155,7 +160,7 @@ public class GameViewPlaneShooter extends View {
                     planes.get(1).resetPosition();
                     count++;
                     missiles.remove(i);
-                    if(point != 0){
+                    if(point != 0 && isSoundOn){
                         sp.play(point, 1, 1, 0, 0, 1);
                     }
 
@@ -169,7 +174,7 @@ public class GameViewPlaneShooter extends View {
                     planes2.get(0).resetPosition();
                     count++;
                     missiles.remove(i);
-                    if(point != 0){
+                    if(point != 0 && isSoundOn){
                         sp.play(point, 1, 1, 0, 0, 1);
                     }
 
@@ -183,7 +188,7 @@ public class GameViewPlaneShooter extends View {
                     planes2.get(1).resetPosition();
                     count++;
                     missiles.remove(i);
-                    if(point != 0){
+                    if(point != 0 && isSoundOn){
                         sp.play(point, 1, 1, 0, 0, 1);
                     }
 
@@ -217,7 +222,7 @@ public class GameViewPlaneShooter extends View {
                 if (missiles.size() < 3) {
                     Missile m = new Missile(context);
                     missiles.add(m);
-                    if(fire != 0){
+                    if(fire != 0 && isSoundOn){
                         sp.play(fire, 1, 1, 0, 0, 1);
                     }
                 }

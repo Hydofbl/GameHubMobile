@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class Options extends AppCompatActivity {
 
     ImageButton soundButton;
+    boolean isSoundOn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,24 +23,33 @@ public class Options extends AppCompatActivity {
 
         soundButton = (ImageButton) findViewById(R.id.soundOnOffButton);
 
+        SharedPreferences pref = getSharedPreferences("MyPref", 0);
+        isSoundOn = pref.getBoolean("soundOnOff", false);
+
+        if(isSoundOn){
+            soundButton.setImageResource(R.drawable.soundonbtnsmall);
+        }
+        else{
+            soundButton.setImageResource(R.drawable.soundoffbtnsmall);
+        }
+
         soundButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences pref = getSharedPreferences("MyPref", 0);
-                boolean soundOnOff = pref.getBoolean("soundOnOff", false);
+                isSoundOn = pref.getBoolean("soundOnOff", false);
                 SharedPreferences.Editor editor = pref.edit();
-                if(soundOnOff){
+                if(isSoundOn){
                     soundButton.setImageResource(R.drawable.soundoffbtnsmall);
-                    soundOnOff = false;
+                    isSoundOn = false;
                     Toast.makeText(getApplicationContext(),"Sound Off",Toast.LENGTH_SHORT).show();
                 }
                 else{
                     soundButton.setImageResource(R.drawable.soundonbtnsmall);
-                    soundOnOff = true;
+                    isSoundOn = true;
                     Toast.makeText(getApplicationContext(),"Sound On",Toast.LENGTH_SHORT).show();
                 }
 
-                editor.putBoolean("soundOnOff", soundOnOff);
+                editor.putBoolean("soundOnOff", isSoundOn);
                 editor.commit();
             }
         });

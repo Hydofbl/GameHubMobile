@@ -37,6 +37,8 @@ public class GameViewFlappyBird extends View {
     private float volume;
     private boolean loadedsound;
     private SoundPool soundPool;
+    private boolean isSoundOn;
+
     public GameViewFlappyBird(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
@@ -73,6 +75,9 @@ public class GameViewFlappyBird extends View {
             }
         });
         soundJump = this.soundPool.load(context, R.raw.jump_02,1);
+
+        SharedPreferences pref = getContext().getSharedPreferences("MyPref", 0);
+        isSoundOn = pref.getBoolean("soundOnOff", false);
     }
 
     private void initPipe() {
@@ -152,7 +157,7 @@ public class GameViewFlappyBird extends View {
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN){
             bird.setDrop(-15);
-            if (loadedsound) {
+            if (loadedsound && isSoundOn) {
                 int streamId = this.soundPool.play(this.soundJump,(float)0.5 , (float)0.5, 1,0,1f);
             }
         }
