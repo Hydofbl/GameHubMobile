@@ -1,5 +1,6 @@
 package com.example.gamehubmobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -180,4 +181,15 @@ public class StartCardGame extends AppCompatActivity {
         imageView.setImageResource(imageId);
     }
 
+    public void goBackToGamePage(View v) {
+        Intent intent = new Intent(this, GamePage.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void restart(View v) {
+        Intent intent = new Intent(this, StartCardGame.class);
+        startActivity(intent);
+        finish();
+    }
 }

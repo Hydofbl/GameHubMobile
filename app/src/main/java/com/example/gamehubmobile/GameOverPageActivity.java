@@ -21,13 +21,16 @@ public class GameOverPageActivity extends AppCompatActivity {
         String gameName = getIntent().getExtras().getString("gameName");
         int score = getIntent().getExtras().getInt("score");
         SharedPreferences pref = getSharedPreferences("MyPref", 0);
-        int scoreSP = pref.getInt("scoreSP", 0);
+
+        int scoreSP = pref.getInt(gameName, 0);
         SharedPreferences.Editor editor = pref.edit();
+
         if(score > scoreSP){
             scoreSP = score;
-            editor.putInt("scoreSP", scoreSP);
+            editor.putInt(gameName, scoreSP);
             editor.commit();
         }
+
         tvScore = (TextView) findViewById(R.id.tvScore);
         tvPersonalBest = (TextView) findViewById(R.id.tvPersonalBest);
         tvGameName = (TextView) findViewById(R.id.tvGameName);

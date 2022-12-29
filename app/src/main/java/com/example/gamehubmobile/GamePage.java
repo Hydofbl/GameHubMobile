@@ -43,4 +43,10 @@ public class GamePage extends AppCompatActivity {
             gameCardModels.add(new GameCardModel(gameNames[i], gameImages[i]));
         }
     }
+
+    public void goBackToMainMenu(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

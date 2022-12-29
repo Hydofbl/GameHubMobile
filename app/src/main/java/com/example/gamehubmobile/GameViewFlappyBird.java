@@ -1,6 +1,8 @@
 package com.example.gamehubmobile;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -110,23 +112,19 @@ public class GameViewFlappyBird extends View {
             for(int i = 0; i < sumpipe; i++){
                 if (bird.getRect().intersect(arrPipes.get(i).getRect())||bird.getY()-bird.getHeight()<0||bird.getY()>Constants.SCREEN_HEIGHT) {
                     Pipe.speed = 0;
-                    StartFlappyBirds.txt_score_over.setText(StartFlappyBirds.txt_score.getText());
-                    StartFlappyBirds.txt_best_score.setText("best: "+ bestscore);
-                    StartFlappyBirds.txt_score.setVisibility(INVISIBLE);
-                    StartFlappyBirds.rl_game_over.setVisibility(VISIBLE);
+
+                    Intent intent = new Intent(context, GameOverPageActivity.class);
+                    intent.putExtra("score", score);
+                    intent.putExtra("gameName", "FlappyBird");
+                    context.startActivity(intent);
+                    ((Activity) context).finish();
+                    return;
                 }
                 if(this.bird.getX()+this.bird.getWidth()>arrPipes.get(i).getX()+arrPipes.get(i).getWidth()/2
                         &&this.bird.getX()+this.bird.getWidth()<=arrPipes.get(i).getX()+arrPipes.get(i).getWidth()/2+Pipe.speed
                         &&i<sumpipe/2)
                 {
                     score++;
-                    if (score>bestscore) {
-                        bestscore = score;
-                        SharedPreferences sp = context.getSharedPreferences("gamesetting", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sp.edit();
-                        editor.putInt("bestscore", bestscore);
-                        editor.apply();
-                    }
                     StartFlappyBirds.txt_score.setText(""+score);
                 }
                 if(this.arrPipes.get(i).getX() < -arrPipes.get(i).getWidth()){
