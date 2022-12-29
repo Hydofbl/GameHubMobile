@@ -3,10 +3,12 @@ package com.example.gamehubmobile.models;
 public class HighScoreModel {
     String gameName;
     String highScore;
+    String scoreType;
 
-    public HighScoreModel(String gameName, String highScore) {
+    public HighScoreModel(String gameName, String highScore, String scoreType) {
         this.gameName = gameName;
         this.highScore = highScore;
+        this.scoreType = scoreType;
     }
 
     public String getGameName() {
@@ -15,5 +17,9 @@ public class HighScoreModel {
 
     public String getHighScore() {
         return highScore;
+    }
+
+    public String getScoreType() {
+        return scoreType;
     }
 }

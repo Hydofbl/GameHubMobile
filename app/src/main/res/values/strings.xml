@@ -8,6 +8,13 @@
         <item>TicTacToe</item>
     </string-array>
 
+    <string-array name="score_types">
+        <item>HighScore</item>
+        <item>HighScore</item>
+        <item>TotalPlay</item>
+        <item>TotalPlay</item>
+    </string-array>
+
     <string name="enter_button">Play</string>
     <string name="button_player1">Deal to Player1</string>
     <string name="button_player2">Deal to Player2</string>

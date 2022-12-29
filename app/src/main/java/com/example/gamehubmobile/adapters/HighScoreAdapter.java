@@ -37,6 +37,7 @@ public class HighScoreAdapter extends RecyclerView.Adapter<HighScoreAdapter.MyVi
     public void onBindViewHolder(@NonNull HighScoreAdapter.MyViewHolder holder, int position) {
         holder.gameName.setText(highScoreModels.get(position).getGameName() + " : ");
         holder.gameHighScore.setText(highScoreModels.get(position).getHighScore());
+        holder.scoreType.setText(" (" + highScoreModels.get(position).getScoreType() + ") ");
     }
 
     @Override
@@ -48,12 +49,14 @@ public class HighScoreAdapter extends RecyclerView.Adapter<HighScoreAdapter.MyVi
 
         TextView gameName;
         TextView gameHighScore;
+        TextView scoreType;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             gameName = itemView.findViewById(R.id.gameNameText);
             gameHighScore = itemView.findViewById(R.id.gameHighScoreText);
+            scoreType = itemView.findViewById(R.id.scoreTypeText);
         }
     }
 }

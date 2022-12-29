@@ -31,19 +31,18 @@ public class HighScoreBoard extends AppCompatActivity {
 
         recyclerView.setAdapter(highScoreAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-        System.out.println(highScoreAdapter.getItemCount() + " AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     }
 
     private void setUpHighScoreModels(){
         String[] gameNames = getResources().getStringArray(R.array.game_names);
+        String[] scoreTypes = getResources().getStringArray(R.array.score_types);
+
         SharedPreferences pref = getSharedPreferences("MyPref", 0);
         int gameHighScore;
 
         for (int i = 0; i < gameNames.length; i++) {
             gameHighScore = pref.getInt(gameNames[i], 0);
-            highScoreModels.add(new HighScoreModel(gameNames[i], Integer.toString(gameHighScore)));
+            highScoreModels.add(new HighScoreModel(gameNames[i], Integer.toString(gameHighScore), scoreTypes[i]));
         }
     }
 
