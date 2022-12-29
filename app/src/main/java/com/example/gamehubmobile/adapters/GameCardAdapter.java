@@ -1,5 +1,6 @@
 package com.example.gamehubmobile.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gamehubmobile.R;
+import com.example.gamehubmobile.StartCardGame;
 import com.example.gamehubmobile.StartPlaneShooter;
 import com.example.gamehubmobile.StartTicTacToe;
 import com.example.gamehubmobile.models.GameCardModel;
@@ -49,9 +51,14 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.MyView
                 int adapterPos = holder.getAdapterPosition();
                 if(adapterPos==0){
                     Intent intent = new Intent(context, StartPlaneShooter.class);
+                    //intent.putExtra("gameName", gameCardModels.get(adapterPos).getGameName());
                     context.startActivity(intent);
                 }
                 else if(adapterPos==1){
+                    Intent intent = new Intent(context, StartCardGame.class);
+                    context.startActivity(intent);
+                }
+                else if(adapterPos==2){
                     Intent intent = new Intent(context, StartTicTacToe.class);
                     context.startActivity(intent);
                 }

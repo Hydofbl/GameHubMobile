@@ -19,7 +19,7 @@ public class GamePage extends AppCompatActivity {
 
     // Image'leri buraya koy sıraya göre.
     // isimlerini de strings içine ekle.
-    int[] gameImages = {R.drawable.plane_1, R.drawable.closebtn};
+    int[] gameImages = {R.drawable.plane_1, R.drawable.black_jokerturned, R.drawable.closebtn};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +42,5 @@ public class GamePage extends AppCompatActivity {
         for (int i = 0; i < gameNames.length; i++) {
             gameCardModels.add(new GameCardModel(gameNames[i], gameImages[i]));
         }
-    }
-
-    public void startPlaneShooter(View v) {
-        Intent intent = new Intent(this, StartTicTacToe.class);
-        startActivity(intent);
-        finish();
     }
 }

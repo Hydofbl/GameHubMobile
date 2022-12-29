@@ -105,6 +105,7 @@ public class GameViewPlaneShooter extends View {
                 if(life == 0){
                     Intent intent = new Intent(context, GameOverPageActivity.class);
                     intent.putExtra("score", (count * 10));
+                    intent.putExtra("gameName", "PlaneShooter");
                     context.startActivity(intent);
                     ((Activity) context).finish();
                 }

@@ -3,6 +3,16 @@
 
     <string-array name="game_names">
         <item>PlaneShooter</item>
+        <item>CardGame</item>
         <item>TicTacToe</item>
     </string-array>
+
+    <string name="enter_button">Play</string>
+    <string name="button_player1">Deal to Player1</string>
+    <string name="button_player2">Deal to Player2</string>
+    <string name="player1_choice_text"></string>
+    <string name="player2_choice_text"></string>
+    <string name="button_result">Get Result</string>
+    <string name="game_result_text"></string>
+    <string name="button_play_again">Play Again</string>
 </resources>

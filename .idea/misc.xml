@@ -3,16 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/activity_card_game.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/activity_game_over.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/activity_game_over_plane_shooter.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/activity_game_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/activity_high_score_board.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/activity_options.xml" value="0.264" />
+        <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/activity_rock_paper_scissors.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/activity_start_plane_shooter.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/activity_start_tic_tac_toe.xml" value="0.264" />
         <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/highscore_recycler_row.xml" value="0.536" />
         <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/layout/recycler_view_row.xml" value="0.264" />
+        <entry key="..\:/Users/kara-/AndroidStudioProjects/GameHubMobile/app/src/main/res/mipmap-xxxhdpi/c_paper.xml" value="0.2595" />
       </map>
     </option>
   </component>
