@@ -3,6 +3,7 @@
 
     <string-array name="game_names">
         <item>PlaneShooter</item>
+        <item>FlappyBird</item>
         <item>CardGame</item>
         <item>TicTacToe</item>
     </string-array>

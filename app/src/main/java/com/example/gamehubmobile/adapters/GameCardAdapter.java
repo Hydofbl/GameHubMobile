@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gamehubmobile.R;
 import com.example.gamehubmobile.StartCardGame;
+import com.example.gamehubmobile.StartFlappyBirds;
 import com.example.gamehubmobile.StartPlaneShooter;
 import com.example.gamehubmobile.StartTicTacToe;
 import com.example.gamehubmobile.models.GameCardModel;
@@ -55,10 +56,14 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.MyView
                     context.startActivity(intent);
                 }
                 else if(adapterPos==1){
-                    Intent intent = new Intent(context, StartCardGame.class);
+                    Intent intent = new Intent(context, StartFlappyBirds.class);
                     context.startActivity(intent);
                 }
                 else if(adapterPos==2){
+                    Intent intent = new Intent(context, StartCardGame.class);
+                    context.startActivity(intent);
+                }
+                else if(adapterPos==3){
                     Intent intent = new Intent(context, StartTicTacToe.class);
                     context.startActivity(intent);
                 }
