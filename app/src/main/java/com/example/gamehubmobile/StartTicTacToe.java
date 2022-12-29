@@ -3,6 +3,8 @@ package com.example.gamehubmobile;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -31,6 +33,16 @@ public class StartTicTacToe extends AppCompatActivity {
         this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setContentView(R.layout.activity_start_tic_tac_toe);
+
+        String gameName = getIntent().getExtras().getString("gameName");
+        SharedPreferences pref = getSharedPreferences("MyPref", 0);
+
+        int totalPlay = pref.getInt(gameName, 0);
+        SharedPreferences.Editor editor = pref.edit();
+
+        totalPlay++;
+        editor.putInt(gameName, totalPlay);
+        editor.commit();
     }
 
     public void play(View view) {
@@ -102,5 +114,11 @@ public class StartTicTacToe extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void goBackToGamePage(View v) {
+        Intent intent = new Intent(this, GamePage.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -61,10 +61,12 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.MyView
                 }
                 else if(adapterPos==2){
                     Intent intent = new Intent(context, StartCardGame.class);
+                    intent.putExtra("gameName", gameCardModels.get(adapterPos).getGameName());
                     context.startActivity(intent);
                 }
                 else if(adapterPos==3){
                     Intent intent = new Intent(context, StartTicTacToe.class);
+                    intent.putExtra("gameName", gameCardModels.get(adapterPos).getGameName());
                     context.startActivity(intent);
                 }
                 else{

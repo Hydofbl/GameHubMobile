@@ -1,6 +1,7 @@
 package com.example.gamehubmobile;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -93,7 +94,15 @@ public class StartCardGame extends AppCompatActivity {
         buttonGameResult = (Button) findViewById(R.id.buttonResult);
         textResult = (TextView) findViewById(R.id.gameResult);
 
-        // buttonAnotherPlay = (Button) findViewById(R.id.buttonPlayAgain);
+        String gameName = getIntent().getExtras().getString("gameName");
+        SharedPreferences pref = getSharedPreferences("MyPref", 0);
+
+        int totalPlay = pref.getInt(gameName, 0);
+        SharedPreferences.Editor editor = pref.edit();
+
+        totalPlay++;
+        editor.putInt(gameName, totalPlay);
+        editor.commit();
     }
 
     public void onPlayer1ButtonClick(View view) {

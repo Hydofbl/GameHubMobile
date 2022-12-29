@@ -31,6 +31,9 @@ public class HighScoreBoard extends AppCompatActivity {
 
         recyclerView.setAdapter(highScoreAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        System.out.println(highScoreAdapter.getItemCount() + " AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     }
 
     private void setUpHighScoreModels(){
@@ -45,6 +48,7 @@ public class HighScoreBoard extends AppCompatActivity {
     }
 
     public void goBackToMainMenu(View v) {
+
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
